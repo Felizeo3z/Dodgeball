@@ -1,0 +1,84 @@
+name: Build and Release Game
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tags like v1.0.0
+  workflow_dispatch:  # Allow manual trigger
+
+env:
+  GODOT_VERSION: "4.4.1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build Game for Multiple Platforms
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Godot
+      uses: chickensoft-games/setup-godot@v2
+      with:
+        version: ${{ env.GODOT_VERSION }}
+        include-templates: true
+        
+    - name: Verify Godot installation
+      run: godot --version
+      
+    - name: Create builds directory
+      run: |
+        mkdir -p builds/windows
+        mkdir -p builds/macos
+        mkdir -p builds/web
+        mkdir -p builds/linux
+        
+    - name: Import project to generate .godot folder
+      run: |
+        godot --headless --import project.godot
+        
+    - name: Build Windows
+      run: |
+        godot --headless --export-release "Windows Desktop" builds/windows/DodgeBallSurvival.exe
+        
+    - name: Build macOS
+      run: |
+        godot --headless --export-release "macOS" builds/macos/DodgeBallSurvival.zip
+        
+    - name: Build Web
+      run: |
+        godot --headless --export-release "Web" builds/web/index.html
+        
+    - name: Create release archives
+      run: |
+        cd builds
+        zip -r ../DodgeBallSurvival-Windows.zip windows/
+        zip -r ../DodgeBallSurvival-macOS.zip macos/
+        zip -r ../DodgeBallSurvival-Web.zip web/
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          DodgeBallSurvival-Windows.zip
+          DodgeBallSurvival-macOS.zip
+          DodgeBallSurvival-Web.zip
+        body: |
+          🎮 **Dodge Ball Survival** - New Release!
+          
+          ## What's New
+          - Automatic builds for Windows, macOS, and Web
+          - Optimized performance and bug fixes
+          
+          ## Download Instructions
+          - **Windows**: Download and extract `DodgeBallSurvival-Windows.zip`, run the .exe file
+          - **macOS**: Download and extract `DodgeBallSurvival-macOS.zip`
+          - **Web**: Download and extract `DodgeBallSurvival-Web.zip`, serve the files on a web server
+          
+          Happy gaming! 🚀
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
