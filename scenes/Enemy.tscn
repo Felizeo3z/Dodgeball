@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bekp0qe5pbmj6"]
+
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_7xy4t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 37.5
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_7xy4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Body" type="Polygon2D" parent="Visuals"]
+color = Color(0, 0.8, 0, 1)
+polygon = PackedVector2Array(37.5, 0, 35.4, 12.9, 26.5, 26.5, 12.9, 35.4, 0, 37.5, -12.9, 35.4, -26.5, 26.5, -35.4, 12.9, -37.5, 0, -35.4, -12.9, -26.5, -26.5, -12.9, -35.4, 0, -37.5, 12.9, -35.4, 26.5, -26.5, 35.4, -12.9)
+
+[node name="Arrow" type="Polygon2D" parent="Visuals"]
+color = Color(0, 0.4, 0, 1)
+polygon = PackedVector2Array(0, -15, 10, 0, 0, 5, -10, 0) 
