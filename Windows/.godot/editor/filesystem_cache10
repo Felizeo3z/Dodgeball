@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1753086146
+DESIGN.md::TextFile/TextFile::-1::1753076246::0::1::::<><><>0<>0<><>::
+Dodgeball ICON.png::CompressedTexture2D/CompressedTexture2D::4474448585271287944::1753085204::1753085989::1::::<><><>0<>0<>e104e9fa95abfa9b450db2e843a1cd83<>res://.godot/imported/Dodgeball ICON.png-490ed5db0a27f7d95c01cab2ab9d02d1.ctex::
+Dodgeball.icns::OtherFile::-1::1753086095::0::1::::<><><>0<>0<><>::
+Dodgeball.ico::OtherFile::-1::1753085417::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1753085918::0::1::::<><><>0<>0<><>::
+Plan.md::TextFile/TextFile::-1::1753076246::0::1::::<><><>0<>0<><>::
+::res://scenes/::1753084287
+Ball.tscn::PackedScene/PackedScene::7058068012691316732::1753076246::0::1::::<><><>0<>0<><>::res://scripts/Ball.gd
+Enemy.tscn::PackedScene/PackedScene::2688776083460928953::1753076246::0::1::::<><><>0<>0<><>::res://scripts/Enemy.gd
+Main.tscn::PackedScene::3514654428463977355::1753084287::0::1::::<><><>0<>0<><>::uid://c7s8l4oamhyiu::::res://scenes/Ball.tscn<>uid://6pjv20a0qy5n::::res://scripts/Main.gd<>uid://bawabf6djpwh3::::res://scripts/EnemySpawner.gd<>uid://bk5p2ldwxc8vf::::res://scenes/UI.tscn
+UI.tscn::PackedScene/PackedScene::3151200007443844691::1753076246::0::1::::<><><>0<>0<><>::res://scripts/UI.gd
+::res://scripts/::1753076246
+AudioManager.gd::GDScript/GDScript::3895645665939648190::1753076246::0::1::::<>Node<><>0<>0<><>::
+Ball.gd::GDScript/GDScript::5081134662973046927::1753076246::0::1::::<>Area2D<><>0<>0<><>::
+Enemy.gd::GDScript/GDScript::3120413263080050807::1753076246::0::1::::<>Area2D<><>0<>0<><>::
+EnemySpawner.gd::GDScript/GDScript::2431839090730957194::1753076246::0::1::::<>Node2D<><>0<>0<><>::
+GameManager.gd::GDScript/GDScript::5598932422808704554::1753076246::0::1::::<>Node<><>0<>0<><>::
+Main.gd::GDScript/GDScript::2207405230481431865::1753076246::0::1::::<>Node2D<><>0<>0<><>::
+UI.gd::GDScript/GDScript::4505101229695921532::1753076246::0::1::::<>CanvasLayer<><>0<>0<><>::
+::res://working/::1753076246
+issues.md::TextFile/TextFile::-1::1753076246::0::1::::<><><>0<>0<><>::
+notes.md::TextFile/TextFile::-1::1753076246::0::1::::<><><>0<>0<><>::
+testing.md::TextFile/TextFile::-1::1753076246::0::1::::<><><>0<>0<><>::
